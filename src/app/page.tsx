@@ -1,3 +1,6 @@
+'use client'
+import Header from '@/components/Header/Header'
+
 export default function Home() {
-    return <h1>Начало работы</h1>
+    return <Header />
 }
