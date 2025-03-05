@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    position: relative;
+    border: 2px solid;
+    &:not(:first-child) {
+        border-left: 0;
+    }
+}
+.title {
+    min-width: 200px;
+    display: flex;
+    padding-inline: 10px;
+    align-items: center;
+    font-size: 20px;
+}
+.arrow {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+.children {
+    display: flex;
+    width: calc(100% + 4px);
+    position: absolute;
+    margin-top: 38px;
+    margin-left: -2px;
+}
