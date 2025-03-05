@@ -20,7 +20,8 @@
 }
 .children {
     display: flex;
-    width: calc(100% + 4px);
+    flex-direction: column;
+    width: 100%;
     position: absolute;
     margin-top: 38px;
     margin-left: -2px;
