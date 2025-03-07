@@ -1,7 +1,10 @@
 import Button from '@/ui-kit/Button/Button'
 import style from './operations.module.scss'
+import { useState } from 'react'
+import Modal from '@/ui-kit/Modal/Modal'
 
 export default function Operations() {
+    const [chooseUserModal, setChooseUserModal] = useState<boolean>(false)
     return (
         <>
             <div className={style['row']}>
@@ -10,7 +13,7 @@ export default function Operations() {
                     <input className={style['input']}></input>
                 </div>
                 <div className={style['col']}>
-                    <Button title="Выбрать пользователя" />
+                    <Button title="Выбрать пользователя" onClick={() => setChooseUserModal(true)} />
                 </div>
                 <div className={style['col']}>
                     <Button title="Загрузить документ" />
@@ -20,6 +23,7 @@ export default function Operations() {
                 </div>
             </div>
             <textarea className={style['textarea']} rows={25} />
+            {chooseUserModal && <Modal onClose={() => setChooseUserModal(false)}>123</Modal>}
         </>
     )
 }
