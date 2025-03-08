@@ -9,12 +9,17 @@ type NavbarExtensions = {
     Elem: typeof Elem
 }
 
-type NavbarProps = {
+interface NavbarProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
     children: React.ReactNode
+    className?: string
 }
 
-const Navbar: React.FC<NavbarProps> & NavbarExtensions = ({ children }) => {
-    return <header className={style['container']}>{children}</header>
+const Navbar: React.FC<NavbarProps> & NavbarExtensions = ({ children, ...props }) => {
+    return (
+        <header className={style['container'] + ' ' + props.className} {...props}>
+            {children}
+        </header>
+    )
 }
 export default Navbar
 

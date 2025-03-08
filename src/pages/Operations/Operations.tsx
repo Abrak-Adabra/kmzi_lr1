@@ -1,7 +1,7 @@
-import Button from '@/ui-kit/Button/Button'
+import Button from '@/ui-kit/components/Button/Button'
 import style from './operations.module.scss'
 import { useState } from 'react'
-import Modal from '@/ui-kit/Modal/Modal'
+import Modal from '@/ui-kit/components/Modal/Modal'
 
 export default function Operations() {
     const [chooseUserModal, setChooseUserModal] = useState<boolean>(false)
