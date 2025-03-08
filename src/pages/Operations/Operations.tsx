@@ -1,4 +1,4 @@
-import Button from '@/ui-kit/Button/Button'
+import Button from '@/ui-kit/components/Button/Button'
 import style from './operations.module.scss'
 
 export default function Operations() {
