@@ -14,10 +14,10 @@ const Modal: React.FC<ModalProps> = ({ custom_title, children, onClose }) => {
                 <div className={style['container']}>
                     <div className={style['window']}>
                         <div className={style['header']}>
+                            <h2 style={{ margin: 0 }}>{custom_title}</h2>
                             <div className={style['close-button']} onClick={onClose}>
                                 ✖
                             </div>
-                            <h2 style={{ margin: 0 }}>{custom_title}</h2>
                         </div>
                         {children}
                     </div>
