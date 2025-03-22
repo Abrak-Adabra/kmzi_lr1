@@ -23,13 +23,12 @@
 }
 .header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     min-height: 30px;
 }
 .close-button {
-    position: absolute;
-    font-size: 25px;
-    right: 5px;
-    top: 5px;
-    padding-inline: 5px;
+    font-size: 24px;
+    padding: 5px;
     cursor: pointer;
 }
