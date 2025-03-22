@@ -1,13 +1,13 @@
 import style from './button.module.scss'
 
 interface ButtonProps extends React.HtmlHTMLAttributes<HTMLButtonElement> {
-    title: string
+    custom_title: string
 }
 
-const Button: React.FC<ButtonProps> = ({ title, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ custom_title, ...props }) => {
     return (
         <button className={style['container']} {...props}>
-            {title}
+            {custom_title}
         </button>
     )
 }

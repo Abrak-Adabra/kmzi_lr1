@@ -16,7 +16,7 @@ interface NavbarProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 
 const Navbar: React.FC<NavbarProps> & NavbarExtensions = ({ children, ...props }) => {
     return (
-        <header className={style['container'] + ' ' + props.className} {...props}>
+        <header className={style['container'] + ' ' + (props.className || '')} {...props}>
             {children}
         </header>
     )

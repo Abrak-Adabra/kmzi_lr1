@@ -7,7 +7,7 @@ interface ListProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 
 const List: React.FC<ListProps> = ({ children, ...props }) => {
     return (
-        <div className={style['container'] + ' ' + props.className} {...props}>
+        <div className={style['container'] + ' ' + (props.className || '')} {...props}>
             {children}
         </div>
     )
