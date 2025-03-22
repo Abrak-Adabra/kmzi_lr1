@@ -1,34 +1,30 @@
 import { createPortal } from 'react-dom'
 import style from './modal.module.scss'
-import { useEffect, useState } from 'react'
 
 type ModalProps = {
-    title?: string
+    custom_title?: string
     onClose: () => void
     children?: React.ReactNode
 }
 
-const Modal: React.FC<ModalProps> = ({ title, children, onClose }) => {
-    const [isClient, setIsClient] = useState(false)
-    useEffect(() => {
-        setIsClient(true) // Ensures this component is only rendered on client
-    }, [])
-    if (isClient)
-        return (
-            <>
-                {createPortal(
-                    <div className={style['container']}>
-                        <div className={style['window']}>
+const Modal: React.FC<ModalProps> = ({ custom_title, children, onClose }) => {
+    return (
+        <>
+            {createPortal(
+                <div className={style['container']}>
+                    <div className={style['window']}>
+                        <div className={style['header']}>
                             <div className={style['close-button']} onClick={onClose}>
                                 ✖
                             </div>
-                            <h2>{title}</h2>
-                            {children}
+                            <h2 style={{ margin: 0 }}>{custom_title}</h2>
                         </div>
-                    </div>,
-                    document.body
-                )}
-            </>
-        )
+                        {children}
+                    </div>
+                </div>,
+                document.body
+            )}
+        </>
+    )
 }
 export default Modal
