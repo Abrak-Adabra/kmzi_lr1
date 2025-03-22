@@ -4,6 +4,7 @@ import { observer } from 'mobx-react-lite'
 import data from '@/store/data'
 import { useState } from 'react'
 import keys from '@/store/keys'
+import mock from './mockText.json'
 
 const Operations = observer(() => {
     const [name, setName] = useState<string>('')
@@ -22,6 +23,7 @@ const Operations = observer(() => {
                     <Button
                         custom_title="Выбрать пользователя"
                         onClick={() => {
+                            if (!name) return
                             keys.uniq(name).then((isUnique) => {
                                 if (isUnique) {
                                     keys.generateKeyPairs(name)
@@ -38,7 +40,7 @@ const Operations = observer(() => {
                     <Button custom_title="Сохранить документ" />
                 </div>
             </div>
-            <textarea className={style['textarea']} rows={25} />
+            <textarea className={style['textarea']} rows={25} defaultValue={mock.text} />
         </>
     )
 })
