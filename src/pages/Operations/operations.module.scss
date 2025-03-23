@@ -1,0 +1,22 @@
+.row {
+    display: flex;
+    column-gap: 10px;
+    padding-block: 10px;
+    justify-content: space-evenly;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input {
+    padding: 5px;
+    margin: 10px;
+    font-size: 14px;
+}
+.textarea {
+    padding: 5px;
+    margin: 10px;
+    font-size: 14px;
+}
