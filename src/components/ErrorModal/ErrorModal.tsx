@@ -9,6 +9,7 @@ const ErrorModal = observer(() => {
                 onClose={() => {
                     error.setError('')
                 }}
+                custom_title="Ошибка"
             >
                 {error.text}
             </Modal>
