@@ -4,6 +4,7 @@ import Modal from '@/ui-kit/components/Modal/Modal'
 import data from '@/store/data'
 import keys from '@/store/keys'
 import err from '@/store/errors'
+import About from '../About/About'
 
 export default function Header() {
     const [aboutModal, setAboutModal] = useState<boolean>(false)
@@ -104,7 +105,11 @@ export default function Header() {
                 </Navbar.Item>
                 <Navbar.Item custom_title="О программе" onClick={() => setAboutModal(true)} />
             </Navbar.List>
-            {aboutModal && <Modal custom_title="О программе" onClose={() => setAboutModal(false)} />}
+            {aboutModal && (
+                <Modal custom_title="О программе" onClose={() => setAboutModal(false)}>
+                    <About />
+                </Modal>
+            )}
         </Navbar>
     )
 }

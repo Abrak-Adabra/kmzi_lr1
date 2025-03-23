@@ -37,6 +37,7 @@ const Operations = observer(() => {
                 </div>
                 <div className={style['col']}>
                     <Button
+                        style={{ position: 'relative' }}
                         custom_title={
                             <>
                                 Загрузить
@@ -54,6 +55,9 @@ const Operations = observer(() => {
                                                 }
                                             })
                                         }
+                                    }}
+                                    onFocus={() => {
+                                        if (data.isChangeName) err.setError('Сначала выберете пользователя')
                                     }}
                                 />
                             </>
