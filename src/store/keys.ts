@@ -173,7 +173,7 @@ class Keys {
         this.transaction()?.objectStore('publicKeys').put({ name, signedKey })
     }
 
-    async importSignedText(textFile: File, name: string) {
+    async importSignedText(textFile: File, name: string): Promise<{ text: string; author: string } | false> {
         const signedPublicKeyECDSA = await Promise.resolve(
             new Promise<Uint8Array>((resolve) => {
                 const request = this.transaction()?.objectStore('publicKeys').get(name)
@@ -257,7 +257,7 @@ class Keys {
             err.setError('Подпись и/или документ не действительны')
             return false
         }
-        return decoder.decode(bytes_text)
+        return { text: decoder.decode(bytes_text), author: author_text }
     }
 
     deleteKeyPairs(name: string) {

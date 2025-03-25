@@ -51,7 +51,8 @@ const Operations = observer(() => {
                                             keys.importSignedText(data.file, data.name).then((result) => {
                                                 if (!!result) {
                                                     data.setIsOpenWithPublic(true)
-                                                    data.setText(result)
+                                                    data.setText(result.text)
+                                                    data.setAuthor(result.author)
                                                 }
                                             })
                                         }
@@ -74,6 +75,7 @@ const Operations = observer(() => {
                     />
                 </div>
             </div>
+            {data.author ? `Автор текста: ${data.author}` : ''}
             <textarea
                 value={data.text}
                 className={style['textarea']}

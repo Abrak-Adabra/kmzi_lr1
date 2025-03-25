@@ -18,6 +18,7 @@ export default function Header() {
                         onClick={() => {
                             data.setText('')
                             data.setIsOpenWithPublic(false)
+                            data.setAuthor('')
                         }}
                     />
                     <Navbar.Elem
@@ -34,7 +35,8 @@ export default function Header() {
                                             keys.importSignedText(data.file, data.name).then((result) => {
                                                 if (!!result) {
                                                     data.setIsOpenWithPublic(true)
-                                                    data.setText(result)
+                                                    data.setText(result.text)
+                                                    data.setAuthor(result.author)
                                                 }
                                             })
                                         }
